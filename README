@@ -1,0 +1,16 @@
+COMPILE (normal)
+make all
+
+COMPILE (for valgrind)
+make for_valgrind
+
+VALGRIND memcheck
+valgrind --leak-check=yes ./build/Output
+
+VALGRIND massif
+valgrind --tool=massif --massif-out-file=valgrind/massif.out ./build/Output
+
+* for short programs add --time-unit=B
+
+VALGRIND massif print results
+ms_print valgrind/massif.out
