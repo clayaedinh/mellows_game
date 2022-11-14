@@ -10,10 +10,12 @@ struct Food{
 
 Food foods[] = {
     [FOOD_NULL] = {"NULL_FOOD"},
-    [FOOD_TOMATO] = {"Tomato"},
-    [FOOD_CHEESE] = {"Cheese"},
     [FOOD_FLOUR] = {"Flour"},
     [FOOD_PASTA] = {"Pasta"},
+    [FOOD_YEAST] = {"Yeast"},
+    [FOOD_BREAD] = {"Bread"},
+    [FOOD_TOMATO] = {"Tomato"},
+    [FOOD_CHEESE] = {"Cheese"},
     [FOOD_PIZZA] = {"Pizza"},
 };
 
@@ -55,7 +57,8 @@ struct Recipe {
 Recipe recipes[] = {
     [RECIPE_NULL] = {"NULL_RECIPE", FOOD_NULL, FOOD_NULL, FOOD_NULL, FOOD_NULL},
     [RECIPE_PASTA] = {"Plain Pasta", FOOD_FLOUR, FOOD_NULL, FOOD_NULL, FOOD_PASTA},
-    [RECIPE_PIZZA] = {"Pizza", FOOD_CHEESE, FOOD_TOMATO, FOOD_FLOUR, FOOD_PIZZA}
+    [RECIPE_BREAD] = {"Bread", FOOD_FLOUR, FOOD_YEAST, FOOD_NULL, FOOD_BREAD},
+    [RECIPE_PIZZA] = {"Pizza", FOOD_CHEESE, FOOD_TOMATO, FOOD_BREAD, FOOD_PIZZA}
 };
 
 
@@ -114,7 +117,7 @@ void sortRecipeIngredients(){
 // ---------- COOKING FOODS ----------
 
 // Finds if a recipe if a permutation of the three provided ingredients
-FoodName tryCookRecipe(FoodName ingred_1, FoodName ingred_2, FoodName ingred_3){
+FoodName cookRecipe(FoodName ingred_1, FoodName ingred_2, FoodName ingred_3){
     sortRecipeIngredients();
     FoodTrio given_ingreds = {ingred_1, ingred_2, ingred_3};
     sortFoodTrio(&given_ingreds);
