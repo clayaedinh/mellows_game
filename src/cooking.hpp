@@ -1,7 +1,11 @@
 #ifndef MELLOWS_COOKING_H
 #define MELLOWS_COOKING_H
 
-enum FoodName {
+#include <string>
+
+using namespace std;
+
+enum FoodVariant {
     FOOD_NULL,
     FOOD_FLOUR,
     FOOD_PASTA,
@@ -14,7 +18,7 @@ enum FoodName {
 };
 
 
-enum RecipeName {
+enum RecipeVariant {
     RECIPE_NULL,
     RECIPE_PASTA,
     RECIPE_BREAD,
@@ -22,9 +26,10 @@ enum RecipeName {
     RECIPE_SIZEOF
 };
 
-void printFood(FoodName name);
+void printFood(FoodVariant variant);
+string foodGetName(FoodVariant variant);
 
-FoodName cookRecipe(FoodName ingred_1, FoodName ingred_2, FoodName ingred_3);
+FoodVariant cookRecipe(FoodVariant ingred_1, FoodVariant ingred_2, FoodVariant ingred_3);
 
 
 #endif

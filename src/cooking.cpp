@@ -19,19 +19,23 @@ Food foods[] = {
     [FOOD_PIZZA] = {"Pizza"},
 };
 
-Food * getFood(FoodName name){
+Food * getFood(FoodVariant name){
     return &foods[name];
 }
 
-void printFood(FoodName name){
+void printFood(FoodVariant name){
     std::cout << (&foods[name])->name << "\n";
+}
+
+string foodGetName(FoodVariant variant) {
+    return getFood(variant)->name;
 }
 
 // ---------- FOOD TRIOS ----------
 struct FoodTrio{
-    FoodName one;
-    FoodName two;
-    FoodName three;
+    FoodVariant one;
+    FoodVariant two;
+    FoodVariant three;
 };
 
 void printTrio(FoodTrio const* trio){
@@ -51,7 +55,7 @@ static bool trioEqual(FoodTrio * trio1, FoodTrio * trio2){
 struct Recipe {
     char name[16];
     FoodTrio ingredients;
-    FoodName output;
+    FoodVariant output;
 };
 
 Recipe recipes[] = {
@@ -117,7 +121,7 @@ void sortRecipeIngredients(){
 // ---------- COOKING FOODS ----------
 
 // Finds if a recipe if a permutation of the three provided ingredients
-FoodName cookRecipe(FoodName ingred_1, FoodName ingred_2, FoodName ingred_3){
+FoodVariant cookRecipe(FoodVariant ingred_1, FoodVariant ingred_2, FoodVariant ingred_3){
     sortRecipeIngredients();
     FoodTrio given_ingreds = {ingred_1, ingred_2, ingred_3};
     sortFoodTrio(&given_ingreds);
