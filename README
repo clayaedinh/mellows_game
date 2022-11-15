@@ -5,10 +5,10 @@ COMPILE (for valgrind)
 make for_valgrind
 
 VALGRIND memcheck
-valgrind --leak-check=yes ./build/Output
+valgrind --leak-check=yes ./build/ValOut
 
 VALGRIND massif
-valgrind --tool=massif --massif-out-file=valgrind/massif.out ./build/Output
+valgrind --tool=massif --massif-out-file=valgrind/massif.out ./build/ValOut
 
 * for short programs add --time-unit=B
 
