@@ -32,11 +32,12 @@ class Command{
     string usage;
 
     public:
-    void printUsage();
-    void activate(Argslist args);
     Command(string (* action)(Argslist args), string usage);
     Command();
-    //string activate(unique_ptr<vector<string>> args);
+    void printUsage();
+    void activate(Argslist args);
+    bool isNull();
+
 };
 
 Command::Command(string (* act)(Argslist args), string us){
@@ -54,6 +55,9 @@ void Command::printUsage(){
 
 void Command::activate(Argslist args){
     cout << action(args) << "\n";
+}
+bool Command::isNull(){
+    return action == &commandNull;
 }
 
 
@@ -93,6 +97,12 @@ void nextCommand(){
     }
 
     auto command = findCommand(args[0]);
+
+    if (command->isNull()){
+        printInputRequest("Command unrecognized. Type [help] for list of commands:");
+        return;
+    }
+
 
     if (args.size() == 1){
         command->printUsage();  

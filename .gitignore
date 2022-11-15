@@ -2,3 +2,5 @@
 build/*
 valgrind/*
 ignore/*
+obj/*
+output
