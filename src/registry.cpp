@@ -2,6 +2,7 @@
 #include <fstream>
 #include <unordered_map>
 #include "json.hpp"
+#include "misc.hpp"
 #include "registry.hpp"
 
 using namespace std;
@@ -34,4 +35,7 @@ void loadRegistries(){
 
 // ------ REGISTRY ACCESS ------
 
-Room * findRoom(string id) {return &registryRoom[id];}
+Room * registryFindRoom(string id) {
+    toUpper(&id);
+    return &registryRoom[id];
+}

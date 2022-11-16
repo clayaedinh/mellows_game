@@ -15,6 +15,6 @@ that they are easily accessible to the rest of the game.
 
 void loadRegistries();
 
-Room * findRoom(std::string id);
+Room * registryFindRoom(std::string id);
 
 #endif

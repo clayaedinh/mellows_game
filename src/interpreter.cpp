@@ -6,7 +6,7 @@
 
 #include "interpreter.hpp"
 #include "misc.hpp"
-
+#include "room.hpp"
 
 using namespace std;
 
@@ -22,8 +22,9 @@ string commandNull(Argslist args){
 }
 
 string commandView(Argslist args){
-    return "you are blind.";
+    return commandRoomView(args[1]);
 }
+
 /* LIST OF COMMANDS */
 
 class Command{
@@ -76,7 +77,7 @@ Command * findCommand(string arg){
     }
 }
 
-void nextCommand(){
+void interpretNextCommand(){
     printInputRequest("Enter Command:");
     
     string input;

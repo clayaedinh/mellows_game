@@ -19,4 +19,6 @@ class Room{
     NLOHMANN_DEFINE_TYPE_INTRUSIVE(Room, name, description)
 };
 
+std::string commandRoomView(std::string room_name);
+
 #endif
