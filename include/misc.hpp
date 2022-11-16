@@ -2,8 +2,7 @@
 #define MELLOWS_MISC_HPP
 
 #include <string>
-using namespace std;
 
-void toUpper(string *const str);
+void toUpper(std::string *const str);
 
 #endif

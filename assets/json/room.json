@@ -1,5 +1,6 @@
 {
-    "room_01" : {
-        "name" : "Test Room" 
+    "ROOM1" : {
+        "name" : "Test Room" ,
+        "description" : "This is a room. It is small and roomy."
     }
 }

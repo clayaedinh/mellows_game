@@ -4,18 +4,20 @@
 #include <string>
 #include <unordered_map>
 
-#include "thing.hpp"
+#include "json.hpp"
+using json = nlohmann::json;
 
-using namespace std;
+#include "thing.hpp"
 
 class Room{
     private:
-    string name;
-    string description;
+    std::string name;
+    std::string description;
 
     public:
-    string getName();
-    string view();
+    std::string getName();
+    std::string view();
+    NLOHMANN_DEFINE_TYPE_INTRUSIVE(Room, name, description)
 };
 
 #endif

@@ -21,7 +21,7 @@ string commandNull(Argslist args){
     return "";
 }
 
-string commandLook(Argslist args){
+string commandView(Argslist args){
     return "you are blind.";
 }
 /* LIST OF COMMANDS */
@@ -63,7 +63,7 @@ bool Command::isNull(){
 
 static unordered_map<string, Command> commands = {
     {"NULL" , Command(&commandNull, "")},
-    {"LOOK" , Command(&commandLook, "LOOK [thing]")},
+    {"VIEW" , Command(&commandView, "LOOK [thing]")},
 
 };
 
@@ -78,18 +78,15 @@ Command * findCommand(string arg){
 
 void nextCommand(){
     printInputRequest("Enter Command:");
-    vector<string> args;
+    
     string input;
-
     getline(cin, input);
-    cin.clear();
 
     stringstream ss(input);
-
+    vector<string> args;
     string tmp;
-    while(ss >> tmp){
-        args.push_back(tmp);
-    }
+    
+    while(ss >> tmp) args.push_back(tmp);
     
     if (args.size() == 0){
         printInputRequest("Please input. Type [help] for list of commands:");
@@ -102,7 +99,6 @@ void nextCommand(){
         printInputRequest("Command unrecognized. Type [help] for list of commands:");
         return;
     }
-
 
     if (args.size() == 1){
         command->printUsage();  

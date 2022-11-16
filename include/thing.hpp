@@ -2,16 +2,15 @@
 #define MELLOWS_THING_HPP
 
 #include <string>
-using namespace std;
 
 class Thing {
     private:
-    string name;
-    string description;
+    std::string name;
+    std::string description;
 
     public:
-    string getName();
-    string view();
+    std::string getName();
+    std::string view();
 };
 
 #endif

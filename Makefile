@@ -6,9 +6,9 @@ LDFLAGS := -I include
 CPPFLAGS :=
 CXXFLAGS := -I include
 
-all : output
+all : build/output
 
-output: $(OBJ_FILES)
+build/output: $(OBJ_FILES)
 	g++ $(LDFLAGS) -o $@ $^
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp

@@ -2,6 +2,6 @@
 
 #include "misc.hpp"
 
-void toUpper(string *const str){
-    transform(str->begin(), str->end(), str->begin(), ::toupper);
+void toUpper(std::string *const str){
+    std::transform(str->begin(), str->end(), str->begin(), ::toupper);
 }
