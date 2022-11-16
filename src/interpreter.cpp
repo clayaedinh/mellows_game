@@ -1,7 +1,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
-#include <unordered_map>
+#include <map>
 #include <vector>
 
 #include "interpreter.hpp"
@@ -77,7 +77,7 @@ bool Command::isQuit(){
 
 // COMMANDS LIST
 
-static unordered_map<string, Command> commands = {
+static map<string, Command> commands = {
     {"HELP" , Command(&commandHelp, "HELP [commandName (optional)]")},
     {"NULL" , Command(&commandNull, "")},
     {"QUIT" , Command(&commandQuit, "QUIT")},

@@ -10,10 +10,14 @@ using json = nlohmann::json;
 
 using namespace std;
 
-int main(){
+void game(){
     loadRegistries();
     InterpretResult result = INTERPRET_NULL;
     while (result != INTERPRET_QUIT){
         result = interpretNextCommand();
     }
+}
+
+int main(){
+    game();
 }
