@@ -12,13 +12,8 @@ using namespace std;
 
 int main(){
     loadRegistries();
-    InterpretResult result;
+    InterpretResult result = INTERPRET_NULL;
     while (result != INTERPRET_QUIT){
         result = interpretNextCommand();
     }
-    
-    /*Room * room = findRoom("ROOM1");
-    cout << room->getName() << "\n" << room->view() << "\n";
-    cout << "YO! gabbagabba\n";
-    */
 }
