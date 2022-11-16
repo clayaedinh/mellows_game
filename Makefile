@@ -2,9 +2,9 @@ SRC_DIR := src
 OBJ_DIR := obj
 SRC_FILES := $(wildcard $(SRC_DIR)/*.cpp)
 OBJ_FILES := $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SRC_FILES))
-LDFLAGS := -I include
+LDFLAGS := -I include -I headers
 CPPFLAGS :=
-CXXFLAGS := -I include
+CXXFLAGS := -I include -I headers
 
 all : build/output
 

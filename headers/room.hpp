@@ -3,11 +3,10 @@
 
 #include <string>
 #include <unordered_map>
-
 #include "json.hpp"
-using json = nlohmann::json;
-
 #include "thing.hpp"
+
+using json = nlohmann::json;
 
 class Room{
     private:
