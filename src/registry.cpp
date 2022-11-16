@@ -34,8 +34,16 @@ void loadRegistries(){
 }
 
 // ------ REGISTRY ACCESS ------
+template <typename T>
+T * registryFind(string id, Registry<T> * registry){
+    toUpper(&id);
+    if (registry->count(id)){
+        return &registry->at(id);
+    }else{
+        return NULL;
+    }
+}
 
 Room * registryFindRoom(string id) {
-    toUpper(&id);
-    return &registryRoom[id];
+    return registryFind<Room>(id, &registryRoom);
 }

@@ -11,5 +11,10 @@ std::string Room::view(){
 }
 
 std::string commandRoomView(std::string room_name){
-    return registryFindRoom(room_name)->view();
+    Room * room = registryFindRoom(room_name);
+    if (room == NULL){
+        return "Room not found.";
+    }else{
+        return room->view();
+    }
 }

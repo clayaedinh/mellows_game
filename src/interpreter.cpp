@@ -10,12 +10,7 @@
 
 using namespace std;
 
-void printInputRequest(string msg){
-    cout << "- - - - - - - - - - - - - - - - \n" << msg << "\n >";
-}
-
 typedef vector<string> & Argslist;
-
 
 //FWD DECLARATIONS
 string commandHelp(Argslist args);
@@ -126,7 +121,9 @@ string commandHelp(Argslist args){
     return findCommandUsage(args[1]);
 }
 
-
+void printInputRequest(string msg){
+    cout << "- - - - - - - - - - - - - - - - \n" << msg << "\n >";
+}
 
 // INTERPRET COMMAND
 
