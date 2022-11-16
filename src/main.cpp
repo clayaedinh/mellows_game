@@ -12,7 +12,10 @@ using namespace std;
 
 int main(){
     loadRegistries();
-    interpretNextCommand();
+    InterpretResult result;
+    while (result != INTERPRET_QUIT){
+        result = interpretNextCommand();
+    }
     
     /*Room * room = findRoom("ROOM1");
     cout << room->getName() << "\n" << room->view() << "\n";
